@@ -11,17 +11,7 @@ This project handles the Game logic, updates the database with scores to keep tr
 
 ## Installation
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/game-project.git
-Clone the repository to your local machine using the above command.
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd game-project
-3. Install the dependencies:
+1. Install the dependencies:
 
    `` npm install ``
 
@@ -33,9 +23,15 @@ The project uses a MySQL database for storing user and score data. Follow these 
 
 2. Run the following command to start the MySQL database in a Docker container:
 
-   ``docker-compose up -d``
-   Note: Make sure to close the Docker container when you finish working with the project by running docker-compose down.
-
+   ```bash 
+   docker-compose up -d
+   ```
+   
+   Note: Make sure to close the Docker container when you finish working with the project by running
+    ```bash 
+    docker-compose down
+    ```
+   
 The database will be automatically created with the name "leaderboard". The connection details are as follows:
 
  ```json
@@ -115,3 +111,4 @@ The server exposes the following API endpoints:
    ]
 }
   ```
+
