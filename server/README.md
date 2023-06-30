@@ -1,49 +1,117 @@
 # GAME
 
-This project handle the Game logic,
-Update the DB with all scores for keeping track of the Leaderboard,
-Enrich the user data with gender guessing and add mock data,
+This project handles the Game logic, updates the database with scores to keep track of the Leaderboard, and enriches user data with gender guessing and mock data.
 
-## How to run the code
+## Table of Contents
 
-## Initiate the MySQL-DB in Docker using:
+- [Installation](#installation)
+- [Database Setup](#database-setup)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
 
-`` docker-compose up -d ``
+## Installation
 
-dont forget to close the Docker when finishing with:
-`` docker-compose down ``
+1. Clone the repository:
 
-### Using NPM
+   ```bash
+   git clone https://github.com/your-username/game-project.git
+Clone the repository to your local machine using the above command.
 
-`` npm start``
+2. Navigate to the project directory:
 
-## How to Interact with the server
+   ```bash
+   cd game-project
+3. Install the dependencies:
 
-after initializing the DB and starting the project we can reach this Endpoint:
+   `` npm install ``
 
-- POST - /game/score
-- POST - /game/user
-- GET - /game/user
+## Database Setup
 
-POST - /game/score: adding to a user score value
+The project uses a MySQL database for storing user and score data. Follow these steps to set up the database:
 
-example body request:
+1. Ensure that you have Docker installed on your system.
 
-``
-{
-"userName": "Dror",
-"score": 1
+2. Run the following command to start the MySQL database in a Docker container:
+
+   ``docker-compose up -d``
+   Note: Make sure to close the Docker container when you finish working with the project by running docker-compose down.
+
+The database will be automatically created with the name "leaderboard". The connection details are as follows:
+
+ ```json
+  {
+   "Host": "localhost",
+   "Port": 3306,
+   "Database": "leaderboard",
+   "Username": "user",
+   "Password": 123
 }
-``
+  ```
 
-POST - /game/user: creating a new user (must be unique userName)
+Make sure these credentials match your local environment. If needed, you can modify the connection details in the project's configuration files.
 
-example body request:
+## Usage
 
-``
-{
-"userName": "Dror",
+To start the server, run the following command:
+
+``npm start``
+
+The server will be running on http://localhost:3001.
+
+
+## API Endpoints
+
+The server exposes the following API endpoints:
+
+- POST /game/score: Adds a score to a user.
+  Request body format:
+ ```json
+  {
+  "userName": "Dror",
+  "score": 1
+  }
+  ```
+- POST /game/user: Creates a new user. The username must be unique.
+  Request body format:
+ ```json
+  {
+  "userName": "Dror"
+  }
+  ```
+
+- GET /game/user: Retrieves all user data sorted by score.
+  Response format:
+ ```json
+  {
+   "users": [
+      {
+         "id": 1,
+         "name": "Dror",
+         "gender": "male",
+         "address": "Gudenåvej6435SamsøDenmark",
+         "email": "rasmus.sorensen@example.com",
+         "dob": "1947-06-03T03:25:27.000Z",
+         "age": 76,
+         "phone": "15559989",
+         "score": 5,
+         "createdAt": "2023-06-30T08:03:33.000Z",
+         "updatedAt": "2023-06-30T08:09:58.000Z",
+         "deletedAt": null
+      },
+      {
+         "id": 2,
+         "name": "bob",
+         "gender": "male",
+         "address": "Grand Marais Ave9119HampsteadCanada",
+         "email": "david.anderson@example.com",
+         "dob": "1989-06-10T11:17:46.000Z",
+         "age": 34,
+         "phone": "J34 R78-2093",
+         "score": 2,
+         "createdAt": "2023-06-30T08:18:50.000Z",
+         "updatedAt": "2023-06-30T08:18:59.000Z",
+         "deletedAt": null
+      }
+   ]
 }
-``
-
-GET - /game/user: getting all users data sorted by score 
+  ```
