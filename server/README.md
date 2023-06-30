@@ -116,7 +116,7 @@ The server exposes the following API endpoints:
 
 if you get a ConnectionError make sure that the docker is up and running and try to restart with
 
-```json
+```
 Unable to connect to the database: ConnectionError [SequelizeConnectionError]: Connection lost: The server closed the connection.
 ```
 
