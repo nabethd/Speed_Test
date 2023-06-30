@@ -1,0 +1,24 @@
+.game-page{
+    background-color: azure;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-area{
+    display: flex;
+    justify-content: space-around;
+    height: inherit;
+}
+.feedback{
+    align-self: center;
+    font-size: 70px;
+    height: 85px;
+}
+.separator {
+    width: 1px;
+    height: 100%;
+    border-left: 5px dotted #000;
+
+}
+

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    container_name: leaderboard
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: leaderboard
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      - ./data:/var/lib/mysql
