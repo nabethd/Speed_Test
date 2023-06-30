@@ -8,6 +8,7 @@ This project handles the Game logic, updates the database with scores to keep tr
 - [Database Setup](#database-setup)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
+- [Error Handling](#error-handling)
 
 ## Installation
 
@@ -53,7 +54,6 @@ To start the server, run the following command:
 ``npm start``
 
 The server will be running on http://localhost:3001.
-
 
 ## API Endpoints
 
@@ -112,3 +112,12 @@ The server exposes the following API endpoints:
 }
   ```
 
+## Error Handling
+
+if you get a ConnectionError make sure that the docker is up and running and try to restart with
+
+```json
+Unable to connect to the database: ConnectionError [SequelizeConnectionError]: Connection lost: The server closed the connection.
+```
+
+``npm start``
