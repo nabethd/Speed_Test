@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Storemaven Speed Game - Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the client-side code for the Storemaven Speed Game. It is a React application that allows users to test their typing speed by pressing the correct key at the right time.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To run the client application locally, follow these steps:
 
-### `npm start`
+1. Install dependencies:
+   ```shell
+    npm install
+2. Start the development server:
+   ```shell
+    npm start
+3. Open your browser and visit http://localhost:3000 to access the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
+### Main Page
+The main page (Main) is the entry point of the application. It allows users to enter their name and start the speed test.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Enter your name in the input field.
+Click the "Start" button to begin the game.
+If the entered name is already taken, an error message will be displayed below the input field in red color.
 
-### `npm test`
+### Game Page
+The game page (Game) is where the speed test takes place. Users need to press the correct key (either 'A' or 'L') at the right time.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Two indicators will be shown, either on the left or the right side.
+Pay attention to the indicator that appears and press the corresponding key. 
+you will only have 1 second !
+- If you press the key too soon, a "Too Soon" message will be displayed.
+- If you press the too late, a "Too Late" message will be displayed.
+- If you press the wrong key, a "Wrong Key" message will be displayed.
+- If you press the key at the right time, a "Success" message will be displayed, and your score will be added to the leaderboard.
 
-### `npm run build`
+the game immediately restart after either a Success Or Failed attempt
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Folder Structure
+The client project has the following folder structure:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- src: Contains the source code of the React application.
+- API: Includes the API functions for interacting with the server.
+- Components: Contains reusable components used throughout the application.
+- Pages: Contains the main and game pages.
+- App.tsx: The root component of the application.
+- index.tsx: The entry point of the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Additional Information
+This client-side code interacts with the server-side code for handling user creation and score updates. Make sure to set up and run the server-side code before running the client application. see the Server ReadMe for more information
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The client application uses React Router for navigation between pages. The routes are defined in the App.tsx file.

@@ -13,7 +13,7 @@ const Game = () => {
   const [resetGame, setResetGame] = useState<boolean>(false);
   const [feedback, setFeedback] = useState<
     "Too Soon" | "Wrong Key" | "Too Late" | "Success" | ""
-  >(""); // the 'Success' text is not indicated in the task but i figured we need to add it
+  >(""); // the 'Success' text is not indicated in the task, but I figured we need to add it
 
   const { state } = useLocation();
   const { userName } = state;
@@ -84,9 +84,7 @@ const Game = () => {
           isVisible={indicatorPosition === "left"}
           showingSide="left"
         />
-
         <div className="separator" />
-
         <Indicator
           isVisible={indicatorPosition === "right"}
           showingSide="right"
